@@ -9,6 +9,17 @@ int main(){
 
     cout << "Value of x: " << x << endl;
     cout << "Address of x: " << &x << endl;
-    cout << "Value stored in ptr: " << *ptr << endl;
+    cout << "Value stored in ptr: " << *ptr << endl; //dereferencing operator
     cout << "Address stored in ptr: " << ptr << endl;
+
+    //Pointer to pointer
+    int** ptr2 = &ptr; //ptr2 stores address of ptr
+    cout << &ptr;
+    cout << ptr2;
+
+    //Null Pointer
+    int* ptr = NULL; //*ptr gives segmentation fault
+
+
+
 }
