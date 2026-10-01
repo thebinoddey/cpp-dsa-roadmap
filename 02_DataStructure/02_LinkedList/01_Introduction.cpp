@@ -2,22 +2,21 @@
 using namespace std;
 
 //1. Create class to create Node
-class CreateNode {
+class Node {
 public:
-    int data;
-    CreateNode* next; //self referential structure
+    int val;
+    Node* next; //self referential structure
 
-    CreateNode(int val){
-        data = val;
-        next = NULL;
+    Node(int val){
+        this->val = val;
     }
 };
 
 //=================================================
 //2. Create Class to initialize LL
 class List {
-    CreateNode* head;
-    CreateNode* tail;
+    Node* head;  
+    Node* tail;
 
 public:
     List(){
@@ -26,7 +25,7 @@ public:
 
     //Push Front or Insertion at head
     void PushFront(int val){
-        CreateNode* newNode = new CreateNode(val); //step1 - dynamic creation
+        Node* newNode = new Node(val); //step1 - dynamic creation
         if(head == NULL){
             head = tail = newNode;
         }
@@ -38,7 +37,7 @@ public:
 
     //Push Back or Insertion at tail
     void PushBack(int val){
-        CreateNode* newNode = new CreateNode(val); 
+        Node* newNode = new Node(val); 
         if(tail == NULL){
             head = tail = newNode;
         }
@@ -50,7 +49,7 @@ public:
 
     //PopFront - delete first node
     void PopFront(){  
-        CreateNode* temp = head;
+        Node* temp = head;
         if(head == NULL){
             cout << "Nothing to Pop" ;
         }
@@ -63,7 +62,7 @@ public:
 
     //PopBack - delete last node
     void PopFront(){  
-        CreateNode* temp = head;
+        Node* temp = head;
         if(head == NULL){
             cout << "Nothing to Pop" ;
         }
@@ -79,10 +78,10 @@ public:
 
     //Print a LL
     void Print(){
-        CreateNode* temp = head;
+        Node* temp = head;
 
         while(temp != NULL){
-            cout << temp ->data << "-" ;
+            cout << temp ->val << "-" ;
             temp = temp ->next;
         }
         cout << endl;
